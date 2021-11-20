@@ -17,7 +17,7 @@ func init() {
 	go func() {
 		ticker := time.NewTicker(time.Millisecond * 200)
 		for range ticker.C {
-			Ws1.broadcast <- []byte(fmt.Sprintf("%s %d", time.Now().Format(time.ANSIC), rand.Int63()))
+			Ws1.Broadcast([]byte(fmt.Sprintf("%s %d", time.Now().Format(time.ANSIC), rand.Int63())))
 		}
 	}()
 }
